@@ -1,5 +1,6 @@
 package com.tunhy.twiter.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
@@ -45,6 +45,18 @@ public class Twit {
 	private boolean isReply;
 	
 	private boolean isTwit;
+	
+	private LocalDateTime createdAt;
+
+	
+	
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
 
 	public Long getId() {
 		return id;
