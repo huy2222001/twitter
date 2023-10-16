@@ -18,8 +18,8 @@ public class UserDtoMapper {
 		userDto.setBackgroundImage(user.getBackgroundImage());
 		userDto.setBio(user.getBio());
 		userDto.setBirthDate(user.getBirthDate());
-		userDto.setFollowers(toUserDto(user.getFollowers()));
-		userDto.setFollowing(toUserDto(user.getFollowings()));
+		userDto.setFollowers(toUserDtos(user.getFollowers()));
+		userDto.setFollowing(toUserDtos(user.getFollowings()));
 		userDto.setLogin_with_google(user.isLogin_with_google());
 		userDto.setLocation(user.getLocation());
 //		userDto.setVerified(false);
@@ -27,7 +27,7 @@ public class UserDtoMapper {
 		return userDto;
 	}
 
-	private static List<UserDto> toUserDto(List<User> followers) {
+	public static List<UserDto> toUserDtos(List<User> followers) {
 		List<UserDto> userDtos = new ArrayList<>();
 		
 		for (User user: followers) {
